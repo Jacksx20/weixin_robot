@@ -8,6 +8,22 @@ import time
 import os
 import requests
 
+class Aiapi(object):
+    def qingyunke(c):
+        #青云客接口
+        r=requests.get('http://api.qingyunke.com/api.php?key=free&appid=0&msg='+c)
+        if str(r.json()['result'])=='0':
+            return r.json()['content']
+        else:
+            return "欢迎关注！" + str(recMsg.Content)
+    def moli(c):
+        data = {
+            'question':c,
+            'api_key':'594dd5a74b8269b6a02209e44364b0d4',
+            'api_secret':'h5f59cv4w730'
+        }
+        r=requests.get('http://i.itpk.cn/api.php',params=data)
+        return r.text
 
 class Handle(object):
 
@@ -57,13 +73,8 @@ class Handle(object):
                 #判断消息是否为text类型
                 if recMsg.MsgType == 'text':
                     print('收到文本消息:' + str(recMsg.Content))
-                    content = "欢迎关注！" + str(recMsg.Content)
-                    # r=requests.get('http://api.qingyunke.com/api.php?key=free&appid=0&msg='+str(recMsg.Content)).text
-                    # if str(r.json()['result'])=='0':
-                    #     content=r.json()['content']
-                    # else:
-                    #     content = "欢迎关注！" + str(recMsg.Content)
-                    # print('回复消息 = ', content)
+                    content = Aiapi.moli(str(recMsg.Content))
+                    print('回复消息 = ', content)
                     return self.render.reply_text(toUser, fromUser, int(time.time()), content)
                 #判断消息是否为image类型
                 if recMsg.MsgType == 'image':

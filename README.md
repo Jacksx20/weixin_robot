@@ -1,4 +1,4 @@
-# 气死我了，接口回复慢的一批，暂时去掉了智能对话功能  
+## 添加茉莉、青云客机器人智能对话两个接口。
 
 ## 修改版：  
 功能：  
@@ -15,9 +15,9 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos
 #安装git工具
 yum install git -y
 #克隆本项目
-git clone https://gitee.com/1091198228/weixingongzonghaozidonghuifu.git
+git clone https://github.com/Jacksx20/weixin_robot.git
 #进入项目文件夹
-cd weixingongzonghaozidonghuifu
+cd weixin_bobot
 
 #如果未安装python3请执行
 yum install python3 -y
@@ -29,3 +29,4 @@ pip3 install -i https://pypi.douban.com/simple requests
 #运行py脚本监听80端口
 python3 main.py 80
 ```
+
