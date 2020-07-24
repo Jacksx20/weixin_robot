@@ -28,5 +28,14 @@ pip3 install -i https://pypi.douban.com/simple requests
 
 #运行py脚本监听80端口
 python3 main.py 80
-```
 
+#后台运行
+nohup  python3 main.py 80 > run.log 2>&1 &
+  #python3  main.py 80 是要放到后台运行的程序和程序的参数,main.py 是要运行python脚本文件 ，80 是web服务#的端口号
+
+   # > run.log   把程序的运行输出重定向到 run.log 文件
+
+   # 2>&1        把错误信息输出到屏幕
+
+   # &              最后的表示设置此进程为后台进程
+```
