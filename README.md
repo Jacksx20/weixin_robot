@@ -1,12 +1,13 @@
-## 添加茉莉、青云客机器人智能对话两个接口。
+## 添加茉莉、青云客机器人智能对话两个接口
 
 ## 修改版：  
 功能：  
     在微信公众号里实现与用户自动回复  
     图尚往来   
-使用方法：复制以下命令、执行，就可以。不用担心中文，井号开头表示注释。
 
 ```
+#备份默认的YUM源
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 #删除原有yum源  
 rm -rf /etc/yum.repos.d/*
 #替换centos yum源为阿里镜像yum源
